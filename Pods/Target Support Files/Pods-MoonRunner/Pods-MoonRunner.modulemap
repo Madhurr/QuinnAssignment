@@ -1,0 +1,6 @@
+framework module Pods_MoonRunner {
+  umbrella header "Pods-MoonRunner-umbrella.h"
+
+  export *
+  module * { export * }
+}
