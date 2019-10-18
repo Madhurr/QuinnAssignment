@@ -3,4 +3,54 @@
    uuid = "B825F7B9-D03D-4744-B16C-8FA44C90B23C"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D51E0DFB-CA72-44FC-B3B3-E19B71B161A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoonRunner/View Controllers/RunDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "retriveTimeandDistancefromDB()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D51E0DFB-CA72-44FC-B3B3-E19B71B161A2 - 1e58d4f94ed690a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Assigenment.RunDetailsViewController.retriveTimeandDistancefromDB() -&gt; ()"
+                  moduleName = "Assigenment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madhur/Desktop/MoonRunner-starter/MoonRunner/View%20Controllers/RunDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "2891">
+               </Location>
+               <Location
+                  uuid = "D51E0DFB-CA72-44FC-B3B3-E19B71B161A2 - 1e58d4f94ed690a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Assigenment.RunDetailsViewController.retriveTimeandDistancefromDB() -&gt; ()"
+                  moduleName = "Assigenment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madhur/Desktop/MoonRunner-starter/MoonRunner/View%20Controllers/RunDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "3079">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
