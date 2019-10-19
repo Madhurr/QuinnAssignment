@@ -249,9 +249,9 @@
                                     <constraint firstItem="7Cn-sX-uPM" firstAttribute="width" secondItem="eQq-kW-TKO" secondAttribute="width" id="c9o-Xu-tLe"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woY-sQ-w9Q">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woY-sQ-w9Q" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="8" y="52" width="359" height="298"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,6 +268,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="sAJ-v7-yGx" id="aTy-VQ-igK"/>
                         <outlet property="distanceLabel" destination="f8d-ls-rzA" id="tZJ-GU-F3O"/>
+                        <outlet property="lineCharView" destination="woY-sQ-w9Q" id="Cbo-bh-RwR"/>
                         <outlet property="paceLabel" destination="uTs-fb-Ote" id="sKW-28-Wfy"/>
                         <outlet property="timeLabel" destination="tzf-nC-Vlh" id="BKH-Qh-qz0"/>
                     </connections>
