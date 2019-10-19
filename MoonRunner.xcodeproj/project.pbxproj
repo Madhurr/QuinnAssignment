@@ -22,6 +22,7 @@
 		E077FEEC2357176200280CBA /* MeasurementFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077FEEB2357176200280CBA /* MeasurementFormatter.swift */; };
 		E077FEEE235728B100280CBA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077FEED235728B100280CBA /* LocationManager.swift */; };
 		E077FEF12358717100280CBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E077FEEF2358717100280CBA /* Main.storyboard */; };
+		E0A083FE235B35A60077A239 /* SpeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A083FD235B35A60077A239 /* SpeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E077FEEB2357176200280CBA /* MeasurementFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementFormatter.swift; sourceTree = "<group>"; };
 		E077FEED235728B100280CBA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E077FEF02358717100280CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0A083FD235B35A60077A239 /* SpeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				18CF26EC1E80290C0097F88C /* HomeViewController.swift */,
 				18CF26EE1E80291E0097F88C /* NewRunViewController.swift */,
 				18CF26F01E80292C0097F88C /* RunDetailsViewController.swift */,
+				E0A083FD235B35A60077A239 /* SpeedTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -138,7 +141,6 @@
 				B6A043E36D4CCD500CFE6659 /* Pods-MoonRunner.debug.xcconfig */,
 				6FF0562DAAFAA89F1E9EF2D8 /* Pods-MoonRunner.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -280,6 +282,7 @@
 				18CF26ED1E80290C0097F88C /* HomeViewController.swift in Sources */,
 				18350CE81E882A860054E1C6 /* StoryboardSupport.swift in Sources */,
 				E077FEEC2357176200280CBA /* MeasurementFormatter.swift in Sources */,
+				E0A083FE235B35A60077A239 /* SpeedTableViewCell.swift in Sources */,
 				E077FEEA2356F98500280CBA /* UnitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
