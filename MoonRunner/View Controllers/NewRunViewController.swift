@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 import CoreLocation
-
+import CoreMotion
 class NewRunViewController: UIViewController {
   // y: axis Distance and x: axis as Time
   @IBOutlet weak var launchPromptStackView: UIStackView!
@@ -11,6 +11,12 @@ class NewRunViewController: UIViewController {
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var paceLabel: UILabel!
+  
+  @IBOutlet weak var xaxisLabel: UILabel!
+  
+  @IBOutlet weak var yaxisLabel: UILabel!
+  
+  @IBOutlet weak var zaxisLabel: UILabel!
   private var run: Run?
   private var locationManager = LocationManager.shared
   private var seconds = 0
@@ -19,11 +25,29 @@ class NewRunViewController: UIViewController {
   private var locationList : [CLLocation] = []
   var speedtoStoreInDb : Double = 0
   
+  var motion = CMMotionManager()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     dataStackView.isHidden = true
+    myAccelerometer()
   }
   
+  func myAccelerometer(){
+    motion.accelerometerUpdateInterval = 0.5
+    motion.startAccelerometerUpdates(to: OperationQueue.current!) { (data , error) in
+      print(data as Any)
+      if let trueData = data {
+        self.view.reloadInputViews()
+        let x = trueData.acceleration.x
+        let y = trueData.acceleration.y
+        let z = trueData.acceleration.z
+        self.xaxisLabel.text = " x: \(Double(x).rounded(toPlcaes: 3))"
+        self.yaxisLabel.text = " y: \(Double(y).rounded(toPlcaes: 3))"
+        self.zaxisLabel.text = " z: \(Double(z).rounded(toPlcaes: 3))"
+      }
+    }
+  }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
@@ -156,3 +180,10 @@ extension NewRunViewController: CLLocationManagerDelegate{
   }
 }
 
+
+extension Double {
+  func rounded(toPlcaes places: Int) -> Double {
+    let divisor = pow(10.0, Double(places))
+    return (self * divisor).rounded() / divisor
+  }
+}

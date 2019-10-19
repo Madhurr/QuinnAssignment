@@ -8,18 +8,17 @@ import CoreData
 class RunDetailsViewController: UIViewController {
   
   @IBOutlet weak var lineCharView: LineChartView!
-  @IBOutlet weak var distanceLabel: UILabel!
-  @IBOutlet weak var dateLabel: UILabel!
-  @IBOutlet weak var timeLabel: UILabel!
-  @IBOutlet weak var paceLabel: UILabel!
+  @IBOutlet var tableView: UITableView!
   var run: Run!
   var timeDataSet : [Double] = []
   var distanceDataSet : [Double] = []
-  
+  var speedDataSet : [Double] = []
   let lineChartView = LineChartView()
   var lineChartEntry = [ChartDataEntry]()
   
   
+  var coreDataStack: CoreDataStack!
+  var fetchController : NSFetchedResultsController<NSFetchRequestResult>!
   
 
 
@@ -27,6 +26,8 @@ class RunDetailsViewController: UIViewController {
     super.viewDidLoad()
      retriveTimeandDistancefromDB()
      addDataSettoChart(timedataSet: timeDataSet, distancedataSet: distanceDataSet)
+    
+
     }
   
   // Creating NSFetch Request to fetch data from Run db we need y: Distance and x: Time
@@ -44,6 +45,7 @@ class RunDetailsViewController: UIViewController {
       for data in result as! [NSManagedObject]{
         timeDataSet.append(data.value(forKey: "time") as! Double)
         distanceDataSet.append(data.value(forKey: "distance") as! Double)
+        speedDataSet.append(data.value(forKey: "speed") as! Double)
       }
     } catch {
       print("Failed")
@@ -78,4 +80,28 @@ class RunDetailsViewController: UIViewController {
     lineCharView.data =  chartData
   }
   
+}
+extension RunDetailsViewController: UITableViewDataSource {
+    
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return speedDataSet.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SpeedTableViewCell.reuseIdentifier, for: indexPath) as? SpeedTableViewCell else {
+            fatalError("Unexpected Index Path")
+        }
+
+        // Configure Cell
+      cell.speedLabel.text = String(speedDataSet[indexPath.row]) + "kmph"
+   
+      
+        return cell
+    }
+  
+
 }
