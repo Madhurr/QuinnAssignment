@@ -90,6 +90,9 @@ class NewRunViewController: UIViewController {
     guard let speedtoStoreInDb = Double(formattedPace.split(separator: " ")[0]) else { return  }
     let storeSpeeddb = Run(context: CoreDataStack.context)
     storeSpeeddb.speed = speedtoStoreInDb
+    storeSpeeddb.time = Double(seconds)/3600
+    guard let distancetoStoreInDb = Double(formattedDistance.split(separator: " ")[0]) else { return }
+    storeSpeeddb.distance = distancetoStoreInDb 
   }
   
   private func startLocationUpdates(){
@@ -104,7 +107,6 @@ class NewRunViewController: UIViewController {
   
   private func saveRun(){
     let newRun = Run(context: CoreDataStack.context)
-    newRun.distance = distance.value
     newRun.duration = Int16(seconds)
     newRun.timestamp = Date()
     for location in locationList{
